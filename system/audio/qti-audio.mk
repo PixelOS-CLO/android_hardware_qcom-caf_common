@@ -1,0 +1,11 @@
+#
+# SPDX-FileCopyrightText: Paranoid Android
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Inherit from QSSI audio makefiles.
+-include $(TOPDIR)vendor/qcom/opensource/commonsys/audio/configs/qssi/qssi.mk
+-include $(TOPDIR)vendor/qcom/opensource/commonsys/audio/configs/qssi/audio_system_product.mk
+
+# Get non-open-source specific aspects.
+$(call inherit-product-if-exists, vendor/qcom-caf/common/system/audio/audio-vendor.mk)

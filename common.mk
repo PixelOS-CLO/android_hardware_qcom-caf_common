@@ -1,3 +1,8 @@
+QCOM_COMMON_PATH := hardware/qcom-caf/common
+
+# Components
+include $(QCOM_COMMON_PATH)/components.mk
+
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(LOCAL_PATH)/linker.config.json
