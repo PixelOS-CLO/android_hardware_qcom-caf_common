@@ -3,6 +3,32 @@ QCOM_COMMON_PATH := hardware/qcom-caf/common
 # Components
 include $(QCOM_COMMON_PATH)/components.mk
 
+# GPS
+PRODUCT_PACKAGES += \
+    libcurl
+
+# Partition source order for Product/Build properties pickup.
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.product.property_source_order=odm,vendor,product,system_ext,system
+
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    device/qcom/qssi_64/public.libraries.product-qti.txt:$(TARGET_COPY_OUT_PRODUCT)/etc/public.libraries-qti.txt \
+    device/qcom/qssi_64/public.libraries.system_ext-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    device/qcom/qssi_64/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
+    device/qcom/qssi_64/privapp-permissions-qti-system-ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti-system-ext.xml \
+    device/qcom/qssi_64/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
+    device/qcom/qssi_64/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
+    device/qcom/qssi_64/qti_broadcast_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_broadcast_whitelist.xml
+
+# QSPA
+PRODUCT_PACKAGES += \
+    qspa_system.rc \
+    qspa_default.rc
+
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(LOCAL_PATH)/linker.config.json
@@ -132,3 +158,7 @@ PRODUCT_PACKAGES += \
     rfs_msm_wpss_readonly_vendor_firmware_symlink \
     rfs_msm_wpss_readwrite_symlink \
     rfs_msm_wpss_shared_symlink
+
+# Vendor Service Manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
