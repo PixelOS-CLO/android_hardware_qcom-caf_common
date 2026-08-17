@@ -5,7 +5,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-from extract_utils.fixups_lib import lib_fixups, lib_fixups_user_type
+from extract_utils.fixups_blob import (
+    blob_fixup,
+    blob_fixups_user_type,
+)
+from extract_utils.fixups_lib import lib_fixups
 from extract_utils.main import ExtractUtils
 
 from extract_utils_qti.module import ExtractUtilsQTIModule, QTIComponentType
@@ -14,16 +18,19 @@ namespace_imports = [
     'vendor/qcom-caf/common/system/telephony',
 ]
 
-lib_fixups: lib_fixups_user_type = {
-    **lib_fixups,
-    'libprotobuf-cpp-full-6.33.5': lambda lib, partition: lib.rsplit('-', 1)[0],
+blob_fixups: blob_fixups_user_type = {
+    'system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc': blob_fixup()
+        .regex_replace('/system/system_ext/bin/qccsyshal@1.2-service', '/system_ext/bin/qccsyshal@1.2-service')
+        .regex_replace('group misc system', 'group misc system\\n    interface vendor.qti.hardware.qccsyshal@1.2::IQccsyshal qccsyshal\\n    interface vendor.qti.hardware.qccsyshal@1.1::IQccsyshal qccsyshal\\n    interface vendor.qti.hardware.qccsyshal@1.0::IQccsyshal qccsyshal')
+        .regex_replace('qccsyshal@1.12-service', 'qccsyshal@1.2-service'),
 }  # fmt: skip
 
 module = ExtractUtilsQTIModule(
     'gps',
     QTIComponentType.SYSTEM,
-    namespace_imports=namespace_imports,
+    blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
+    namespace_imports=namespace_imports,
 )
 
 if __name__ == '__main__':
