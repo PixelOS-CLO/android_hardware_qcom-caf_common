@@ -11,6 +11,11 @@ from extract_utils.main import ExtractUtils
 from extract_utils_qti.fixups_blob import blob_fixup_qti
 from extract_utils_qti.module import ExtractUtilsQTIModule, QTIComponentType
 
+namespace_imports = [
+    'vendor/qcom/opensource/commonsys/display',
+    'vendor/qcom/opensource/commonsys-intf/display',
+]
+
 blob_fixups: blob_fixups_user_type = {
     'system/framework/QXPerformance.jar': blob_fixup_qti()
         .zipalign(),
@@ -20,6 +25,7 @@ module = ExtractUtilsQTIModule(
     'perf',
     QTIComponentType.SYSTEM,
     blob_fixups=blob_fixups,
+    namespace_imports=namespace_imports,
 )
 
 if __name__ == '__main__':
