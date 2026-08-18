@@ -3,5 +3,5 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Get non-open-source specific aspects.
-$(call inherit-product-if-exists, vendor/qcom-caf/common/system/nfc/nfc-vendor.mk)
+# Inherit from QSSI nfc makefiles.
+-include $(TOPDIR)vendor/qcom/opensource/commonsys/nfc/nfc_system_product_aosp.mk
