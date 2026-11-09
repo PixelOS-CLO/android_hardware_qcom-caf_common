@@ -1,0 +1,517 @@
+diff --git a/res/drawable/aptx_card_bottom.xml b/res/drawable/aptx_card_bottom.xml
+new file mode 100644
+index 0000000..a694fb6
+--- /dev/null
++++ b/res/drawable/aptx_card_bottom.xml
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<ripple xmlns:android="http://schemas.android.com/apk/res/android"
++    android:color="?android:colorControlHighlight">
++    <item>
++        <inset
++            android:insetLeft="16.0dp"
++            android:insetTop="1.0dp"
++            android:insetRight="16.0dp"
++            android:insetBottom="1.0dp">
++            <shape android:shape="rectangle">
++                <corners
++                    android:topLeftRadius="4.0dp"
++                    android:topRightRadius="4.0dp"
++                    android:bottomLeftRadius="24.0dp"
++                    android:bottomRightRadius="24.0dp" />
++                <solid android:color="?colorSurfaceBright" />
++            </shape>
++        </inset>
++    </item>
++</ripple>
+diff --git a/res/drawable/aptx_card_middle.xml b/res/drawable/aptx_card_middle.xml
+new file mode 100644
+index 0000000..25585ec
+--- /dev/null
++++ b/res/drawable/aptx_card_middle.xml
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<ripple xmlns:android="http://schemas.android.com/apk/res/android"
++    android:color="?android:colorControlHighlight">
++    <item>
++        <inset
++            android:insetLeft="16.0dp"
++            android:insetTop="1.0dp"
++            android:insetRight="16.0dp"
++            android:insetBottom="1.0dp">
++            <shape android:shape="rectangle">
++                <corners
++                    android:topLeftRadius="4.0dp"
++                    android:topRightRadius="4.0dp"
++                    android:bottomLeftRadius="4.0dp"
++                    android:bottomRightRadius="4.0dp" />
++                <solid android:color="?colorSurfaceBright" />
++            </shape>
++        </inset>
++    </item>
++</ripple>
+diff --git a/res/drawable/aptx_card_single.xml b/res/drawable/aptx_card_single.xml
+new file mode 100644
+index 0000000..d1cbc8b
+--- /dev/null
++++ b/res/drawable/aptx_card_single.xml
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<ripple xmlns:android="http://schemas.android.com/apk/res/android"
++    android:color="?android:colorControlHighlight">
++    <item>
++        <inset
++            android:insetLeft="16.0dp"
++            android:insetTop="1.0dp"
++            android:insetRight="16.0dp"
++            android:insetBottom="1.0dp">
++            <shape android:shape="rectangle">
++                <corners
++                    android:topLeftRadius="24.0dp"
++                    android:topRightRadius="24.0dp"
++                    android:bottomLeftRadius="24.0dp"
++                    android:bottomRightRadius="24.0dp" />
++                <solid android:color="?colorSurfaceBright" />
++            </shape>
++        </inset>
++    </item>
++</ripple>
+diff --git a/res/drawable/aptx_card_top.xml b/res/drawable/aptx_card_top.xml
+new file mode 100644
+index 0000000..dba9387
+--- /dev/null
++++ b/res/drawable/aptx_card_top.xml
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<ripple xmlns:android="http://schemas.android.com/apk/res/android"
++    android:color="?android:colorControlHighlight">
++    <item>
++        <inset
++            android:insetLeft="16.0dp"
++            android:insetTop="1.0dp"
++            android:insetRight="16.0dp"
++            android:insetBottom="1.0dp">
++            <shape android:shape="rectangle">
++                <corners
++                    android:topLeftRadius="24.0dp"
++                    android:topRightRadius="24.0dp"
++                    android:bottomLeftRadius="4.0dp"
++                    android:bottomRightRadius="4.0dp" />
++                <solid android:color="?colorSurfaceBright" />
++            </shape>
++        </inset>
++    </item>
++</ripple>
+diff --git a/res/drawable/aptx_ic_back.xml b/res/drawable/aptx_ic_back.xml
+new file mode 100644
+index 0000000..53f82dd
+--- /dev/null
++++ b/res/drawable/aptx_ic_back.xml
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
++    <item
++        android:width="40.0dp"
++        android:height="40.0dp">
++        <shape android:shape="oval">
++            <solid android:color="?colorSurfaceContainerHighest" />
++        </shape>
++    </item>
++    <item
++        android:width="24.0dp"
++        android:height="24.0dp"
++        android:gravity="center"
++        android:drawable="@drawable/abc_ic_ab_back_material" />
++</layer-list>
+diff --git a/res/layout/installed_app_list.xml b/res/layout/installed_app_list.xml
+index 26293ff..76a26f6 100644
+--- a/res/layout/installed_app_list.xml
++++ b/res/layout/installed_app_list.xml
+@@ -1,10 +1,10 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout android:orientation="vertical" android:paddingTop="0.0dp" android:paddingBottom="0.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+-    <LinearLayout android:orientation="horizontal" android:paddingTop="12.0dp" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="72.0dp" android:paddingStart="24.0dp" android:paddingEnd="16.0dp">
++    <LinearLayout android:orientation="horizontal" android:paddingTop="12.0dp" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="72.0dp" android:paddingStart="36.0dp" android:paddingEnd="28.0dp">
+         <ImageView android:layout_gravity="center_vertical" android:id="@id/app_icon" android:layout_width="40.0dp" android:layout_height="40.0dp" android:layout_marginStart="0.0dp" android:layout_marginEnd="16.0dp" />
+         <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:padding="0.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+-            <TextView android:textAppearance="?textAppearanceBodyLarge" android:textColor="?colorOnSurface" android:gravity="center_vertical" android:id="@id/list_app_name" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_marginLeft="0.0dp" android:layout_marginRight="8.0dp" android:text="App Name" android:singleLine="true" android:layout_weight="1.0" />
++            <TextView android:textAppearance="?textAppearanceBodyLarge" android:textColor="?android:textColorPrimary" android:gravity="center_vertical" android:id="@id/list_app_name" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_marginLeft="0.0dp" android:layout_marginRight="8.0dp" android:text="App Name" android:singleLine="true" android:layout_weight="1.0" />
+             <Spinner android:id="@id/spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:spinnerMode="dropdown" android:layout_marginStart="5.0dp" android:layout_marginEnd="0.0dp" />
+         </LinearLayout>
+     </LinearLayout>
+diff --git a/res/layout/preference_category_material.xml b/res/layout/preference_category_material.xml
+index 9effbe2..187acba 100644
+--- a/res/layout/preference_category_material.xml
++++ b/res/layout/preference_category_material.xml
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout android:gravity="center_vertical" android:paddingLeft="24.0dp" android:paddingRight="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:baselineAligned="false" android:paddingStart="24.0dp" android:paddingEnd="24.0dp"
++<LinearLayout android:gravity="center_vertical" android:paddingLeft="36.0dp" android:paddingRight="36.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:baselineAligned="false" android:paddingStart="36.0dp" android:paddingEnd="36.0dp"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+     <include layout="@layout/image_frame" />
+     <RelativeLayout android:paddingTop="8.0dp" android:paddingBottom="8.0dp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+diff --git a/res/layout/preference_material.xml b/res/layout/preference_material.xml
+index 41eecd9..8d1e456 100644
+--- a/res/layout/preference_material.xml
++++ b/res/layout/preference_material.xml
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout android:gravity="center_vertical" android:background="?android:selectableItemBackground" android:paddingLeft="24.0dp" android:paddingRight="24.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:minHeight="?android:listPreferredItemHeightSmall" android:paddingStart="24.0dp" android:paddingEnd="24.0dp"
++<LinearLayout android:gravity="center_vertical" android:paddingLeft="36.0dp" android:paddingRight="36.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:minHeight="?android:listPreferredItemHeightSmall" android:paddingStart="36.0dp" android:paddingEnd="36.0dp"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+     <include layout="@layout/image_frame" />
+     <RelativeLayout android:paddingTop="16.0dp" android:paddingBottom="16.0dp" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+-        <TextView android:textAppearance="?textAppearanceBodyLarge" android:textColor="?colorOnSurface" android:ellipsize="marquee" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
++        <TextView android:textAppearance="?textAppearanceBodyLarge" android:textColor="?android:textColorPrimary" android:ellipsize="marquee" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+         <TextView android:layout_gravity="start" android:id="@android:id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="10" android:layout_below="@android:id/title" android:layout_alignLeft="@android:id/title" android:textAlignment="viewStart" android:layout_alignStart="@android:id/title" style="@style/PreferenceSummaryTextStyle" />
+     </RelativeLayout>
+     <LinearLayout android:gravity="end|center" android:orientation="vertical" android:id="@android:id/widget_frame" android:paddingLeft="16.0dp" android:paddingRight="0.0dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:paddingStart="16.0dp" android:paddingEnd="0.0dp" />
+diff --git a/res/values/styles.xml b/res/values/styles.xml
+index 9173c44..bb5c710 100644
+--- a/res/values/styles.xml
++++ b/res/values/styles.xml
+@@ -3298,6 +3298,8 @@
+     </style>
+     <style name="DayNightAppTheme" parent="@style/Theme.Material3.DynamicColors.DayNight">
+         <item name="actionBarStyle">@style/AptxActionBar</item>
++        <item name="homeAsUpIndicator">@drawable/aptx_ic_back</item>
++        <item name="android:windowBackground">?colorSurfaceContainer</item>
+         <item name="alertDialogTheme">@style/AptxAlertDialog</item>
+         <item name="android:windowLightStatusBar">?isLightTheme</item>
+         <item name="android:windowLightNavigationBar">?isLightTheme</item>
+@@ -3626,7 +3628,7 @@
+     </style>
+     <style name="PreferenceSummaryTextStyle">
+         <item name="android:textAppearance">?textAppearanceBodyMedium</item>
+-        <item name="android:textColor">?colorOnSurfaceVariant</item>
++        <item name="android:textColor">?android:textColorSecondary</item>
+     </style>
+     <style name="PreferenceThemeOverlay" parent="@style/BasePreferenceThemeOverlay">
+         <item name="preferenceCategoryTitleTextAppearance">?textAppearanceTitleSmall</item>
+@@ -6144,7 +6146,7 @@
+         <item name="android:textAppearance">@style/TextAppearance.Material3.HeadlineSmall</item>
+     </style>
+     <style name="AptxActionBar" parent="@style/Widget.Material3.ActionBar.Solid">
+-        <item name="background">?colorSurface</item>
++        <item name="background">?colorSurfaceContainer</item>
+         <item name="elevation">0.0dp</item>
+         <item name="titleTextStyle">@style/TextAppearance.Material3.HeadlineSmall</item>
+     </style>
+diff --git a/smali_classes4/com/qualcomm/qtil/aptxacu/CardPreferenceAdapter.smali b/smali_classes4/com/qualcomm/qtil/aptxacu/CardPreferenceAdapter.smali
+new file mode 100644
+index 0000000..cadbfa4
+--- /dev/null
++++ b/smali_classes4/com/qualcomm/qtil/aptxacu/CardPreferenceAdapter.smali
+@@ -0,0 +1,152 @@
++.class public Lcom/qualcomm/qtil/aptxacu/CardPreferenceAdapter;
++.super Landroidx/preference/PreferenceGroupAdapter;
++.source "CardPreferenceAdapter.java"
++
++
++# direct methods
++.method public constructor <init>(Landroidx/preference/PreferenceGroup;)V
++    .locals 0
++
++    invoke-direct {p0, p1}, Landroidx/preference/PreferenceGroupAdapter;-><init>(Landroidx/preference/PreferenceGroup;)V
++
++    return-void
++.end method
++
++.method private isGroupBoundary(I)Z
++    .locals 2
++
++    if-ltz p1, :cond_boundary
++
++    invoke-virtual {p0}, Landroidx/preference/PreferenceGroupAdapter;->getItemCount()I
++
++    move-result v0
++
++    if-ge p1, v0, :cond_boundary
++
++    invoke-virtual {p0, p1}, Landroidx/preference/PreferenceGroupAdapter;->getItem(I)Landroidx/preference/Preference;
++
++    move-result-object v0
++
++    if-eqz v0, :cond_boundary
++
++    instance-of v1, v0, Landroidx/preference/PreferenceCategory;
++
++    if-nez v1, :cond_boundary
++
++    const/4 v1, 0x0
++
++    return v1
++
++    :cond_boundary
++    const/4 v1, 0x1
++
++    return v1
++.end method
++
++.method public static setCardBackground(Landroid/view/View;ZZ)V
++    .locals 8
++
++    if-eqz p1, :cond_not_top
++
++    if-eqz p2, :cond_top
++
++    const-string v0, "aptx_card_single"
++
++    goto :goto_apply
++
++    :cond_top
++    const-string v0, "aptx_card_top"
++
++    goto :goto_apply
++
++    :cond_not_top
++    if-eqz p2, :cond_middle
++
++    const-string v0, "aptx_card_bottom"
++
++    goto :goto_apply
++
++    :cond_middle
++    const-string v0, "aptx_card_middle"
++
++    :goto_apply
++    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
++
++    move-result-object v1
++
++    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
++
++    move-result-object v2
++
++    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
++
++    move-result-object v1
++
++    const-string v3, "drawable"
++
++    invoke-virtual {v2, v0, v3, v1}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
++
++    move-result v0
++
++    if-eqz v0, :cond_done
++
++    invoke-virtual {p0}, Landroid/view/View;->getPaddingStart()I
++
++    move-result v4
++
++    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
++
++    move-result v5
++
++    invoke-virtual {p0}, Landroid/view/View;->getPaddingEnd()I
++
++    move-result v6
++
++    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
++
++    move-result v7
++
++    invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundResource(I)V
++
++    invoke-virtual {p0, v4, v5, v6, v7}, Landroid/view/View;->setPaddingRelative(IIII)V
++
++    :cond_done
++    return-void
++.end method
++
++
++# virtual methods
++.method public onBindViewHolder(Landroidx/preference/PreferenceViewHolder;I)V
++    .locals 3
++
++    invoke-super {p0, p1, p2}, Landroidx/preference/PreferenceGroupAdapter;->onBindViewHolder(Landroidx/preference/PreferenceViewHolder;I)V
++
++    invoke-virtual {p0, p2}, Landroidx/preference/PreferenceGroupAdapter;->getItem(I)Landroidx/preference/Preference;
++
++    move-result-object v0
++
++    if-eqz v0, :cond_done
++
++    instance-of v0, v0, Landroidx/preference/PreferenceCategory;
++
++    if-nez v0, :cond_done
++
++    add-int/lit8 v0, p2, -0x1
++
++    invoke-direct {p0, v0}, Lcom/qualcomm/qtil/aptxacu/CardPreferenceAdapter;->isGroupBoundary(I)Z
++
++    move-result v0
++
++    add-int/lit8 v1, p2, 0x1
++
++    invoke-direct {p0, v1}, Lcom/qualcomm/qtil/aptxacu/CardPreferenceAdapter;->isGroupBoundary(I)Z
++
++    move-result v1
++
++    iget-object v2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
++
++    invoke-static {v2, v0, v1}, Lcom/qualcomm/qtil/aptxacu/CardPreferenceAdapter;->setCardBackground(Landroid/view/View;ZZ)V
++
++    :cond_done
++    return-void
++.end method
+diff --git a/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity$AppAdapter.smali b/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity$AppAdapter.smali
+index 6252003..20f4adb 100644
+--- a/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity$AppAdapter.smali
++++ b/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity$AppAdapter.smali
+@@ -164,6 +164,44 @@
+ .end method
+ 
+ .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
++    .locals 3
++
++    invoke-virtual {p0, p1, p2, p3}, Lcom/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity$AppAdapter;->aptxGetView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
++
++    move-result-object v0
++
++    if-nez p1, :cond_not_first
++
++    const/4 v1, 0x1
++
++    goto :goto_last
++
++    :cond_not_first
++    const/4 v1, 0x0
++
++    :goto_last
++    invoke-virtual {p0}, Lcom/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity$AppAdapter;->getCount()I
++
++    move-result v2
++
++    add-int/lit8 v2, v2, -0x1
++
++    if-ne p1, v2, :cond_not_last
++
++    const/4 v2, 0x1
++
++    goto :goto_apply
++
++    :cond_not_last
++    const/4 v2, 0x0
++
++    :goto_apply
++    invoke-static {v0, v1, v2}, Lcom/qualcomm/qtil/aptxacu/CardPreferenceAdapter;->setCardBackground(Landroid/view/View;ZZ)V
++
++    return-object v0
++.end method
++
++.method public aptxGetView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     .locals 6
+     .param p1, "position"    # I
+     .param p2, "convertView"    # Landroid/view/View;
+diff --git a/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity.smali b/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity.smali
+index f4b1ecd..eec37e6 100644
+--- a/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity.smali
++++ b/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity.smali
+@@ -1185,7 +1185,7 @@
+ .end method
+ 
+ .method protected onCreate(Landroid/os/Bundle;)V
+-    .locals 7
++    .locals 9
+     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
+ 
+     .line 76
+@@ -1198,6 +1198,18 @@
+     .line 77
+     invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
+ 
++    invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatActivity;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
++
++    move-result-object v7
++
++    if-eqz v7, :cond_aptx_up
++
++    const/4 v8, 0x1
++
++    invoke-virtual {v7, v8}, Landroidx/appcompat/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
++
++    :cond_aptx_up
++
+     .line 80
+     invoke-direct {p0}, Lcom/qualcomm/qtil/aptxacu/aptxacuProfilePreferenceListActivity;->setupSystemBarInsets()V
+ 
+@@ -1423,6 +1435,16 @@
+     return-void
+ .end method
+ 
++.method public onSupportNavigateUp()Z
++    .locals 1
++
++    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
++
++    const/4 v0, 0x1
++
++    return v0
++.end method
++
+ .method protected onDestroy()V
+     .locals 0
+ 
+diff --git a/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuSettingsActivity.smali b/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuSettingsActivity.smali
+index 9e1875b..7c6f6f3 100644
+--- a/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuSettingsActivity.smali
++++ b/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuSettingsActivity.smali
+@@ -120,6 +120,18 @@
+     .local v1, "title":Ljava/lang/String;
+     invoke-virtual {p0, v1}, Lcom/qualcomm/qtil/aptxacu/aptxacuSettingsActivity;->setTitle(Ljava/lang/CharSequence;)V
+ 
++    invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatActivity;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
++
++    move-result-object v2
++
++    if-eqz v2, :cond_aptx_up
++
++    const/4 v3, 0x1
++
++    invoke-virtual {v2, v3}, Landroidx/appcompat/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
++
++    :cond_aptx_up
++
+     .line 36
+     invoke-virtual {p0}, Lcom/qualcomm/qtil/aptxacu/aptxacuSettingsActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
+ 
+@@ -148,6 +160,16 @@
+     return-void
+ .end method
+ 
++.method public onSupportNavigateUp()Z
++    .locals 1
++
++    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
++
++    const/4 v0, 0x1
++
++    return v0
++.end method
++
+ .method public onDestroy()V
+     .locals 0
+ 
+diff --git a/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuSettingsFragment.smali b/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuSettingsFragment.smali
+index d61effa..7747f9d 100644
+--- a/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuSettingsFragment.smali
++++ b/smali_classes4/com/qualcomm/qtil/aptxacu/aptxacuSettingsFragment.smali
+@@ -353,6 +353,16 @@
+ 
+ 
+ # virtual methods
++.method protected onCreateAdapter(Landroidx/preference/PreferenceScreen;)Landroidx/recyclerview/widget/RecyclerView$Adapter;
++    .locals 1
++
++    new-instance v0, Lcom/qualcomm/qtil/aptxacu/CardPreferenceAdapter;
++
++    invoke-direct {v0, p1}, Lcom/qualcomm/qtil/aptxacu/CardPreferenceAdapter;-><init>(Landroidx/preference/PreferenceGroup;)V
++
++    return-object v0
++.end method
++
+ .method public onCreatePreferences(Landroid/os/Bundle;Ljava/lang/String;)V
+     .locals 14
+     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
